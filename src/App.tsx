@@ -126,7 +126,7 @@ export default function App() {
   const [showStickyDonate, setShowStickyDonate] = useState(true);
 
   // Dynamic QR Code generation using public free API
-  const [currentUrl, setCurrentUrl] = useState('https://mia-jamboree-2027.example.com');
+  const [currentUrl, setCurrentUrl] = useState('https://isobel-jamboree-2027.example.com');
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setCurrentUrl(window.location.href);
@@ -254,7 +254,7 @@ export default function App() {
               </div>
             </div>
             <div className="progress-cta">
-              <p>Every donation directly funds Mia's travel, mandatory equipment, and regional training camps.</p>
+              <p>Every donation directly funds Isobel's travel, mandatory equipment, and regional training camps.</p>
               <a href={data.donationUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ width: '100%', fontSize: '1.1rem', padding: '14px 28px' }}>
                 Donate via SumUp <ArrowUpRight size={18} />
               </a>
@@ -276,7 +276,7 @@ export default function App() {
               ))}
               <div style={{ marginTop: '32px' }}>
                 <a href={data.donationUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                  Support Mia's target
+                  Support Isobel's target
                 </a>
               </div>
             </div>
@@ -527,7 +527,7 @@ export default function App() {
                   <h4>Business Sponsorship</h4>
                   <p>Are you a local business? I would love to discuss sponsorship or raffle prize donation options in exchange for promotion!</p>
                   <a href="#contact" className="support-link">
-                    Contact Mia's parents
+                    Contact Isobel's parents
                   </a>
                 </div>
               </div>
@@ -560,7 +560,7 @@ export default function App() {
           <div>
             <h2 className="section-title" style={{ textAlign: 'left', margin: '0 0 16px' }}>Get in Touch</h2>
             <p style={{ color: 'var(--text-muted)', marginBottom: '32px' }}>
-              If you have any questions, wish to support Mia's fundraising activities, or are interested in sponsorship packages, please contact us.
+              If you have any questions, wish to support Isobel's fundraising activities, or are interested in sponsorship packages, please contact us.
             </p>
             
             <div className="safeguarding-box">
@@ -584,7 +584,7 @@ export default function App() {
             
             {formSubmitted ? (
               <div className="form-success">
-                Thank you! Your message has been sent successfully to Mia's parents ({safeguarding.contactEmail}). We will respond as soon as possible.
+                Thank you! Your message has been sent successfully to Isobel's parents ({safeguarding.contactEmail}). We will respond as soon as possible.
               </div>
             ) : (
               <form className="contact-form" onSubmit={handleFormSubmit}>
@@ -623,7 +623,7 @@ export default function App() {
                     required 
                     value={formData.message}
                     onChange={handleFormChange}
-                    placeholder="Hi! I'd love to sponsor Mia or offer a raffle prize..."
+                    placeholder="Hi! I'd love to sponsor Isobel or offer a raffle prize..."
                   ></textarea>
                 </div>
                 
@@ -658,15 +658,15 @@ export default function App() {
         <div className="container">
           <div className="footer-grid">
             <div className="footer-col">
-              <h4>Mia's Jamboree Journey</h4>
+              <h4>Isobel's Jamboree Journey</h4>
               <p style={{ opacity: 0.8, lineHeight: 1.5 }}>
-                Fundraising website to support Mia's selection as a UK Contingent member attending the 2027 World Scout Jamboree in Poland.
+                Fundraising website to support Isobel's selection as a UK Contingent member attending the 2027 World Scout Jamboree in Poland.
               </p>
             </div>
             
             <div className="footer-col">
               <h4>Quick Links</h4>
-              <a href="#about">About Mia</a>
+              <a href="#about">About Isobel</a>
               <a href="#story">My Story</a>
               <a href="#jamboree">Jamboree Info</a>
               <a href="#activities">Activities</a>
@@ -685,13 +685,13 @@ export default function App() {
             <div className="footer-col">
               <h4>Safety & Privacy</h4>
               <p style={{ opacity: 0.8, fontSize: '0.8rem' }}>
-                All donations support Mia's Jamboree participation. This site compiles with UK Scout Safeguarding policies. No address, school details, or tracking codes are shared.
+                All donations support Isobel's Jamboree participation. This site compiles with UK Scout Safeguarding policies. No address, school details, or tracking codes are shared.
               </p>
             </div>
           </div>
           
           <div className="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} Mia & Parent John P. All rights reserved. Created to support fundraising for the 26th World Scout Jamboree.</p>
+            <p>&copy; {new Date().getFullYear()} Isobel & Parent John P. All rights reserved. Created to support fundraising for the 26th World Scout Jamboree.</p>
           </div>
         </div>
       </footer>

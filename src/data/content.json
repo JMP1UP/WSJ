@@ -1,6 +1,6 @@
 {
-  "firstName": "Mia",
-  "tagline": "Help Mia reach the World Scout Jamboree",
+  "firstName": "Isobel",
+  "tagline": "Help Isobel reach the World Scout Jamboree",
   "heroDescription": "In summer 2027, I have the opportunity to join Scouts from around the world in Poland. I am fundraising to help make this amazing adventure possible.",
   "donationUrl": "https://pay.sumup.com/b2c/QHDRFAN5",
   "fundraising": {
@@ -11,7 +11,7 @@
   },
   "story": {
     "paragraphs": [
-      "Hi, I'm Mia! I am 15 years old and I've been a Scout with the 1st Valley Scout Group for the past six years. Scouting has been a huge part of my life—it's where I've learned to build shelters, navigate by the stars, and push myself out of my comfort zone.",
+      "Hi, I'm Isobel! I am 15 years old and I've been a Scout with the 1st Valley Scout Group for the past six years. Scouting has been a huge part of my life—it's where I've learned to build shelters, navigate by the stars, and push myself out of my comfort zone.",
       "When I found out I had been selected to represent our local district as part of the UK Contingent to the 26th World Scout Jamboree in Poland, I could hardly believe it. Selection involved a challenging team weekend of leadership trials, problem-solving, and outdoor tasks.",
       "Going to Poland in 2027 means the world to me. It's a chance to meet people from over 150 different countries, share our cultures, and learn how we can work together to make the world a better place. To get there, I need to raise £4,000, which covers my travel, equipment, preparation events, and a contribution to the Jamboree solidarity fund, which helps Scouts from developing nations attend too. I am working hard, making crafts, baking, and planning events to earn my place!"
     ]
@@ -131,8 +131,8 @@
     }
   ],
   "safeguarding": {
-    "contactEmail": "parent.mia.jamboree@example.com",
+    "contactEmail": "parent.isobel.jamboree@example.com",
     "parentName": "John P.",
-    "notice": "For Mia's safety, this website is managed and monitored by her parents. No personal contact details, precise timetables, or real-time location tracking are published here. All messages sent through the contact form are routed directly to her parents."
+    "notice": "For Isobel's safety, this website is managed and monitored by her parents. No personal contact details, precise timetables, or real-time location tracking are published here. All messages sent through the contact form are routed directly to her parents."
   }
 }
