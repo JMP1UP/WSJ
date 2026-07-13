@@ -1,19 +1,20 @@
 {
   "firstName": "Isobel",
   "tagline": "Help Isobel reach the World Scout Jamboree",
-  "heroDescription": "In summer 2027, I have the opportunity to join Scouts from around the world in Poland. I am fundraising to help make this amazing adventure possible.",
-  "donationUrl": "https://pay.sumup.com/b2c/QHDRFAN5",
+  "heroDescription": "In summer 2027, I have the opportunity to represent Nottinghamshire and the UK at the 26th World Scout Jamboree in Poland. I am fundraising to help make this amazing adventure possible.",
+  "donationUrl": "https://www.gofundme.com/f/help-me-fundraise-my-26th-world-scout-jamboree-journey",
   "fundraising": {
-    "target": 4000,
-    "raised": 1850,
+    "target": 3500,
+    "raised": 975,
     "currency": "£",
-    "supportersCount": 42
+    "supportersCount": 8
   },
   "story": {
     "paragraphs": [
-      "Hi, I'm Isobel! I am 15 years old and I've been a Scout with the 1st Valley Scout Group for the past six years. Scouting has been a huge part of my life—it's where I've learned to build shelters, navigate by the stars, and push myself out of my comfort zone.",
-      "When I found out I had been selected to represent our local district as part of the UK Contingent to the 26th World Scout Jamboree in Poland, I could hardly believe it. Selection involved a challenging team weekend of leadership trials, problem-solving, and outdoor tasks.",
-      "Going to Poland in 2027 means the world to me. It's a chance to meet people from over 150 different countries, share our cultures, and learn how we can work together to make the world a better place. To get there, I need to raise £4,000, which covers my travel, equipment, preparation events, and a contribution to the Jamboree solidarity fund, which helps Scouts from developing nations attend too. I am working hard, making crafts, baking, and planning events to earn my place!"
+      "Hi, I'm Isobel (but my friends call me Issy)! I am 15 years old and I've been a Scout for many years. I am honoured to have been selected to represent Nottinghamshire and the UK at the 26th World Scout Jamboree in 2027 in Poland—a global celebration of unity, adventure, and discovery among young people.",
+      "Being in Scouts has shaped my confidence, resilience, and curiosity. I hope to grow from this experience, share what I learn, and be a positive role model for the Cubs I support as a Young Leader, and for younger members of Scouting beginning their own journeys.",
+      "Beyond Explorers, I volunteer in my community, including helping cater for a recent minis rugby tour at my local club and supporting local sports events. Giving back is important to me, and the Jamboree is another opportunity to live those values on a global stage.",
+      "To make this opportunity possible, I aim to raise £3,500. My fundraising will include tackling the Three Peaks Challenge, running cake stalls, selling mystery books and handmade candles, and offering special Mother’s Day gift boxes. Every contribution brings me one step closer to Poland—and to a journey that represents both personal growth and the spirit of adventure and service at the heart of Scouting. Thank you sincerely for your support!"
     ]
   },
   "jamboreeInfo": {
@@ -58,7 +59,7 @@
     },
     {
       "title": "Leadership",
-      "desc": "As an Assistant Patrol Leader, I now help teach outdoor skills, navigation, and outdoor cooking to younger Scouts.",
+      "desc": "As a Young Leader, I help teach outdoor skills, navigation, and activities to younger Cub Scouts in our unit.",
       "emoji": "📣"
     },
     {
@@ -75,43 +76,43 @@
   "activities": [
     {
       "id": 1,
-      "title": "Jamboree Cake & Bake Sale",
-      "date": "June 2026",
-      "desc": "Baked over 120 cupcakes, brownies, and cookies for the local village fair. A huge hit in the local community!",
-      "raised": 280,
-      "status": "completed",
-      "actionText": "Completed!",
-      "image": "images/activity_bake_sale.png"
+      "title": "Yorkshire Three Peaks Challenge",
+      "date": "Upcoming",
+      "desc": "Tackling the demanding Yorkshire Three Peaks hike (24 miles, 5,200ft of ascent) in under 12 hours to raise sponsorships.",
+      "raised": 0,
+      "status": "upcoming",
+      "actionText": "Sponsor me",
+      "image": "images/story_hiking.png"
     },
     {
       "id": 2,
-      "title": "Sponsored 15-Mile Trail Hike",
-      "date": "August 2026",
-      "desc": "Hiking the demanding Peak Ridge Path trail to raise sponsorships. Pledges are open on my SumUp or offline forms!",
-      "raised": 640,
-      "status": "in-progress",
-      "actionText": "Sponsor me",
-      "image": "images/activity_sponsored_walk.png"
+      "title": "Catering for Minis Rugby Tour",
+      "date": "Completed",
+      "desc": "Volunteered and helped cater for the minis rugby tour at my local rugby club, donating proceeds to my Jamboree fund.",
+      "raised": 150,
+      "status": "completed",
+      "actionText": "Completed!",
+      "image": "images/activity_cleanup.png"
     },
     {
       "id": 3,
-      "title": "Handmade Craft & Christmas Sale",
-      "date": "December 2026",
-      "desc": "Making and selling hand-carved wooden decorations and custom paracord survival bracelets in local craft markets.",
-      "raised": 0,
-      "status": "upcoming",
-      "actionText": "Pre-order crafts",
+      "title": "Mother's Day Gift Boxes",
+      "date": "Completed",
+      "desc": "Hand-crafted and curated custom gift boxes for Mother's Day, sold to supportive neighbors and friends.",
+      "raised": 320,
+      "status": "completed",
+      "actionText": "Completed!",
       "image": "images/activity_crafts.png"
     },
     {
       "id": 4,
-      "title": "Scout Group Yard Clean-up",
-      "date": "March 2026",
-      "desc": "Offered gardening and yard clearing services in exchange for donations in our neighborhood. Hard work but very fun!",
-      "raised": 350,
-      "status": "completed",
-      "actionText": "Completed!",
-      "image": "images/activity_cleanup.png"
+      "title": "Mystery Books & Handmade Candles",
+      "date": "Ongoing",
+      "desc": "Creating scented hand-poured candles and wrapping mystery books with short clues to sell at local school and craft fairs.",
+      "raised": 505,
+      "status": "in-progress",
+      "actionText": "Sponsor my crafts",
+      "image": "images/activity_bake_sale.png"
     }
   ],
   "updates": [
@@ -119,20 +120,20 @@
       "id": 1,
       "date": "July 12, 2026",
       "title": "First UK Contingent Training Weekend!",
-      "desc": "Just returned from my first training weekend with our regional unit (Unit 42)! We practiced team building, pitched the large patrol tents, and started planning our unit identity. It was amazing to meet the other 35 Scouts who I'll be travelling with.",
+      "desc": "Just returned from my first training weekend with our regional unit! We practiced team building, pitched the large patrol tents, and started planning our unit identity. It was amazing to meet the other 35 Scouts who I'll be travelling with.",
       "image": "images/update_training.png"
     },
     {
       "id": 2,
       "date": "June 15, 2026",
       "title": "Launch of my Fundraising Website",
-      "desc": "My dad and I built this website to share my journey! I am super excited to keep you all updated on my progress. The SumUp link is live and secure, and thank you for visiting!",
+      "desc": "My dad and I built this website to share my journey! I am super excited to keep you all updated on my progress. The GoFundMe link is live and secure, and thank you for visiting!",
       "image": "images/update_launch.png"
     }
   ],
   "safeguarding": {
     "contactEmail": "parent.isobel.jamboree@example.com",
-    "parentName": "John P.",
+    "parentName": "Sarah Partridge",
     "notice": "For Isobel's safety, this website is managed and monitored by her parents. No personal contact details, precise timetables, or real-time location tracking are published here. All messages sent through the contact form are routed directly to her parents."
   }
 }

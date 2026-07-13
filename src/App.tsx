@@ -691,7 +691,7 @@ export default function App() {
           </div>
           
           <div className="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} Isobel & Parent John P. All rights reserved. Created to support fundraising for the 26th World Scout Jamboree.</p>
+            <p>&copy; {new Date().getFullYear()} Isobel & Parent {safeguarding.parentName}. All rights reserved. Created to support fundraising for the 26th World Scout Jamboree.</p>
           </div>
         </div>
       </footer>
