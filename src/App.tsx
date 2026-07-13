@@ -21,6 +21,7 @@ import contentData from './data/content.json';
 
 interface ContentData {
   firstName: string;
+  spreadsheetId?: string;
   tagline: string;
   heroDescription: string;
   donationUrl: string;
@@ -69,19 +70,137 @@ interface ContentData {
   };
 }
 
+// Helper to parse standard CSV rows
+function parseCSV(text: string): string[][] {
+  const lines: string[][] = [];
+  const rows = text.split(/\r?\n/);
+  for (const row of rows) {
+    if (!row.trim()) continue;
+    const values: string[] = [];
+    let insideQuote = false;
+    let currentValue = '';
+    for (let i = 0; i < row.length; i++) {
+      const char = row[i];
+      if (char === '"') {
+        insideQuote = !insideQuote;
+      } else if (char === ',' && !insideQuote) {
+        values.push(currentValue.trim());
+        currentValue = '';
+      } else {
+        currentValue += char;
+      }
+    }
+    values.push(currentValue.trim());
+    const cleanValues = values.map(val => val.replace(/^"|"$/g, '').replace(/""/g, '"'));
+    lines.push(cleanValues);
+  }
+  return lines;
+}
+
 export default function App() {
   const data = contentData as ContentData;
   const { fundraising, safeguarding, activities, updates } = data;
+
+  // Google Sheet Dynamic Data State
+  const [sheetData, setSheetData] = useState<{
+    raised: number;
+    target: number;
+    supportersCount: number;
+    activities: any[];
+    updates: any[];
+  } | null>(null);
+  const [loadingSheet, setLoadingSheet] = useState(false);
+
+  // Fallback / Active Variable Resolvers
+  const activeRaised = sheetData ? sheetData.raised : fundraising.raised;
+  const activeTarget = sheetData ? sheetData.target : fundraising.target;
+  const activeSupporters = sheetData ? sheetData.supportersCount : fundraising.supportersCount;
+  const activeActivities = sheetData ? sheetData.activities : activities;
+  const activeUpdates = sheetData ? sheetData.updates : updates;
+
+  // Fetch Google Sheets data on mount
+  useEffect(() => {
+    const spreadsheetId = data.spreadsheetId;
+    if (!spreadsheetId || spreadsheetId === 'YOUR_SPREADSHEET_ID') return;
+
+    async function fetchSheet() {
+      setLoadingSheet(true);
+      try {
+        const fetchTab = async (tabName: string) => {
+          const url = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tabName)}`;
+          const res = await fetch(url);
+          if (!res.ok) throw new Error(`Failed to fetch tab ${tabName}`);
+          const text = await res.text();
+          return parseCSV(text);
+        };
+
+        const [generalRows, activitiesRows, updatesRows] = await Promise.all([
+          fetchTab('General'),
+          fetchTab('Activities'),
+          fetchTab('Updates')
+        ]);
+
+        // General Info parsing
+        let raised = data.fundraising.raised;
+        let target = data.fundraising.target;
+        let supportersCount = data.fundraising.supportersCount;
+
+        generalRows.forEach(row => {
+          if (row.length >= 2) {
+            const key = row[0].toLowerCase().trim();
+            const val = parseFloat(row[1].replace(/[^0-9.]/g, ''));
+            if (!isNaN(val)) {
+              if (key === 'raised') raised = val;
+              if (key === 'target') target = val;
+              if (key === 'supporters') supportersCount = Math.round(val);
+            }
+          }
+        });
+
+        // Activities parsing (columns: Title, Date, Description, Raised, Status, ActionText, Image)
+        const parsedActivities = activitiesRows.slice(1).map((row, idx) => ({
+          id: idx + 1,
+          title: row[0] || 'Activity',
+          date: row[1] || 'Upcoming',
+          desc: row[2] || '',
+          raised: parseFloat((row[3] || '').replace(/[^0-9.]/g, '')) || 0,
+          status: (row[4] || 'upcoming').toLowerCase().trim(),
+          actionText: row[5] || 'Sponsor me',
+          image: row[6] || 'images/story_hiking.png'
+        }));
+
+        // Updates parsing (columns: Date, Title, Description, Image)
+        const parsedUpdates = updatesRows.slice(1).map((row, idx) => ({
+          id: idx + 1,
+          date: row[0] || '',
+          title: row[1] || 'Update',
+          desc: row[2] || '',
+          image: row[3] || 'images/update_launch.png'
+        }));
+
+        setSheetData({
+          raised,
+          target,
+          supportersCount,
+          activities: parsedActivities.length ? parsedActivities : data.activities,
+          updates: parsedUpdates.length ? parsedUpdates : data.updates
+        });
+      } catch (err) {
+        console.error('Error fetching Google Sheet, using fallback content.json:', err);
+      } finally {
+        setLoadingSheet(false);
+      }
+    }
+
+    fetchSheet();
+  }, [data]);
   
   // Progress Bar Animation
   const [animatedProgress, setAnimatedProgress] = useState(0);
-  const targetPercent = Math.min(Math.round((fundraising.raised / fundraising.target) * 100), 100);
+  const targetPercent = Math.min(Math.round((activeRaised / activeTarget) * 100), 100);
   
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setAnimatedProgress(targetPercent);
-    }, 300);
-    return () => clearTimeout(timer);
+    setAnimatedProgress(targetPercent);
   }, [targetPercent]);
 
   // Tab Navigation for Activities & Updates
@@ -136,7 +255,7 @@ export default function App() {
   const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(currentUrl)}&color=1b4332&bgcolor=fcfbf9`;
 
   // Filter activities based on selection
-  const filteredActivities = activities.filter(act => {
+  const filteredActivities = activeActivities.filter(act => {
     if (activityFilter === 'all') return true;
     if (activityFilter === 'completed') return act.status === 'completed';
     if (activityFilter === 'upcoming') return act.status === 'upcoming' || act.status === 'in-progress';
@@ -152,7 +271,7 @@ export default function App() {
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)' }}>Support {data.firstName}'s Journey</span>
             <span style={{ fontSize: '0.9rem', fontWeight: 800, color: 'var(--primary)' }}>
-              {fundraising.currency}{fundraising.raised} raised of {fundraising.currency}{fundraising.target}
+              {fundraising.currency}{activeRaised} raised of {fundraising.currency}{activeTarget}
             </span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -237,11 +356,11 @@ export default function App() {
         <div className="container">
           <div className="progress-card glass-card">
             <div className="progress-details">
-              <h3>Fundraising Progress</h3>
+              <h3>Fundraising Progress {loadingSheet && <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)', fontWeight: 'normal' }}>(updating...)</span>}</h3>
               <div className="progress-numbers">
                 <div>
-                  <span className="progress-raised">{fundraising.currency}{fundraising.raised.toLocaleString()}</span>
-                  <span className="progress-target"> raised of {fundraising.currency}{fundraising.target.toLocaleString()} target</span>
+                  <span className="progress-raised">{fundraising.currency}{activeRaised.toLocaleString()}</span>
+                  <span className="progress-target"> raised of {fundraising.currency}{activeTarget.toLocaleString()} target</span>
                 </div>
                 <span className="progress-percentage">{animatedProgress}%</span>
               </div>
@@ -250,7 +369,7 @@ export default function App() {
               </div>
               <div className="progress-meta">
                 <Users size={16} style={{ color: 'var(--accent)' }} />
-                <span>Supported by <strong>{fundraising.supportersCount}</strong> kind contributors so far. thank you!</span>
+                <span>Supported by <strong>{activeSupporters}</strong> kind contributors so far. thank you!</span>
               </div>
             </div>
             <div className="progress-cta">
@@ -462,7 +581,7 @@ export default function App() {
           ) : (
             /* Updates Timeline */
             <div className="updates-timeline">
-              {updates.map((upd) => (
+              {activeUpdates.map((upd) => (
                 <div className="update-card glass-card" key={upd.id}>
                   <div className="update-image">
                     <img src={upd.image} alt={upd.title} />
