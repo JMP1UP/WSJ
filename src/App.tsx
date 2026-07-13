@@ -97,6 +97,16 @@ function parseCSV(text: string): string[][] {
   return lines;
 }
 
+// Helper to convert Google Drive share links into direct image URLs
+function getDirectImageUrl(url: string): string {
+  if (!url) return '';
+  const driveMatch = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || url.match(/id=([a-zA-Z0-9_-]+)/);
+  if (driveMatch && driveMatch[1]) {
+    return `https://docs.google.com/uc?export=view&id=${driveMatch[1]}`;
+  }
+  return url;
+}
+
 export default function App() {
   const data = contentData as ContentData;
   const { fundraising, safeguarding, activities, updates } = data;
@@ -543,7 +553,7 @@ export default function App() {
                 {filteredActivities.map((act) => (
                   <div className="activity-card glass-card" key={act.id}>
                     <div className="activity-img-wrapper">
-                      <img src={act.image} alt={act.title} />
+                      <img src={getDirectImageUrl(act.image)} alt={act.title} />
                       <span className={`activity-badge ${act.status}`}>
                         {act.status.replace('-', ' ')}
                       </span>
@@ -584,7 +594,7 @@ export default function App() {
               {activeUpdates.map((upd) => (
                 <div className="update-card glass-card" key={upd.id}>
                   <div className="update-image">
-                    <img src={upd.image} alt={upd.title} />
+                    <img src={getDirectImageUrl(upd.image)} alt={upd.title} />
                   </div>
                   <div className="update-content">
                     <span className="update-date">{upd.date}</span>
