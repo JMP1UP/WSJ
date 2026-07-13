@@ -225,7 +225,7 @@ export default function App() {
           </div>
           <div className="hero-image-container">
             <div className="hero-image-frame">
-              <img src="/images/hero_scout_outdoors.png" alt={`${data.firstName} in Scout Uniform outdoors`} />
+              <img src="images/hero_scout_outdoors.png" alt={`${data.firstName} in Scout Uniform outdoors`} />
             </div>
             <div className="hero-badge">Poland 2027 🇵🇱</div>
           </div>
@@ -283,10 +283,10 @@ export default function App() {
             
             <div className="story-photos">
               <div className="story-photo-wrapper">
-                <img src="/images/story_hiking.png" alt="Hiking in the hills" />
+                <img src="images/story_hiking.png" alt="Hiking in the hills" />
               </div>
               <div className="story-photo-wrapper">
-                <img src="/images/story_campfire.png" alt="Campfire in the woods" />
+                <img src="images/story_campfire.png" alt="Campfire in the woods" />
               </div>
             </div>
           </div>
@@ -348,7 +348,7 @@ export default function App() {
             </div>
             
             <div className="jamboree-map-container">
-              <img src="/images/jamboree_map.png" alt="Map showing travel route from London UK to Gdańsk Poland" />
+              <img src="images/jamboree_map.png" alt="Map showing travel route from London UK to Gdańsk Poland" />
               <div className="jamboree-theme-banner">Official Theme: Bravely</div>
             </div>
           </div>

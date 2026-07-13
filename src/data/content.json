@@ -81,7 +81,7 @@
       "raised": 280,
       "status": "completed",
       "actionText": "Completed!",
-      "image": "/images/activity_bake_sale.png"
+      "image": "images/activity_bake_sale.png"
     },
     {
       "id": 2,
@@ -91,7 +91,7 @@
       "raised": 640,
       "status": "in-progress",
       "actionText": "Sponsor me",
-      "image": "/images/activity_sponsored_walk.png"
+      "image": "images/activity_sponsored_walk.png"
     },
     {
       "id": 3,
@@ -101,7 +101,7 @@
       "raised": 0,
       "status": "upcoming",
       "actionText": "Pre-order crafts",
-      "image": "/images/activity_crafts.png"
+      "image": "images/activity_crafts.png"
     },
     {
       "id": 4,
@@ -111,7 +111,7 @@
       "raised": 350,
       "status": "completed",
       "actionText": "Completed!",
-      "image": "/images/activity_cleanup.png"
+      "image": "images/activity_cleanup.png"
     }
   ],
   "updates": [
@@ -120,14 +120,14 @@
       "date": "July 12, 2026",
       "title": "First UK Contingent Training Weekend!",
       "desc": "Just returned from my first training weekend with our regional unit (Unit 42)! We practiced team building, pitched the large patrol tents, and started planning our unit identity. It was amazing to meet the other 35 Scouts who I'll be travelling with.",
-      "image": "/images/update_training.png"
+      "image": "images/update_training.png"
     },
     {
       "id": 2,
       "date": "June 15, 2026",
       "title": "Launch of my Fundraising Website",
       "desc": "My dad and I built this website to share my journey! I am super excited to keep you all updated on my progress. The SumUp link is live and secure, and thank you for visiting!",
-      "image": "/images/update_launch.png"
+      "image": "images/update_launch.png"
     }
   ],
   "safeguarding": {
