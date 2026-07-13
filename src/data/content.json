@@ -1,0 +1,138 @@
+{
+  "firstName": "Mia",
+  "tagline": "Help Mia reach the World Scout Jamboree",
+  "heroDescription": "In summer 2027, I have the opportunity to join Scouts from around the world in Poland. I am fundraising to help make this amazing adventure possible.",
+  "donationUrl": "https://pay.sumup.com/b2c/QHDRFAN5",
+  "fundraising": {
+    "target": 4000,
+    "raised": 1850,
+    "currency": "£",
+    "supportersCount": 42
+  },
+  "story": {
+    "paragraphs": [
+      "Hi, I'm Mia! I am 15 years old and I've been a Scout with the 1st Valley Scout Group for the past six years. Scouting has been a huge part of my life—it's where I've learned to build shelters, navigate by the stars, and push myself out of my comfort zone.",
+      "When I found out I had been selected to represent our local district as part of the UK Contingent to the 26th World Scout Jamboree in Poland, I could hardly believe it. Selection involved a challenging team weekend of leadership trials, problem-solving, and outdoor tasks.",
+      "Going to Poland in 2027 means the world to me. It's a chance to meet people from over 150 different countries, share our cultures, and learn how we can work together to make the world a better place. To get there, I need to raise £4,000, which covers my travel, equipment, preparation events, and a contribution to the Jamboree solidarity fund, which helps Scouts from developing nations attend too. I am working hard, making crafts, baking, and planning events to earn my place!"
+    ]
+  },
+  "jamboreeInfo": {
+    "location": "Sobieszewska Island, Gdańsk, Poland",
+    "dates": "30 July – 8 August 2027",
+    "theme": "Bravely",
+    "description": "The World Scout Jamboree is an educational event that brings together 50,000 young people from all corners of the globe. The 2027 theme, 'Bravely', urges young people to act courageously in building a sustainable future, bridging cultural differences, and tackling global challenges together.",
+    "facts": [
+      {
+        "label": "Attendees",
+        "value": "50,000+ Scouts"
+      },
+      {
+        "label": "Countries",
+        "value": "150+ Nations"
+      },
+      {
+        "label": "Age Group",
+        "value": "14 – 17 years old"
+      },
+      {
+        "label": "Frequency",
+        "value": "Every 4 years"
+      }
+    ]
+  },
+  "scoutingImpact": [
+    {
+      "title": "Confidence",
+      "desc": "Tackling high ropes, leading night hikes, and speaking up in patrol forums has helped me grow and trust my voice.",
+      "emoji": "🧗‍♀️"
+    },
+    {
+      "title": "Teamwork",
+      "desc": "Whether putting up tents in a storm or resolving camp chores, I've learned how to coordinate and cooperate with anyone.",
+      "emoji": "🤝"
+    },
+    {
+      "title": "Independence",
+      "desc": "Being away from home, managing my own gear, and organizing my budget makes me feel ready for any adventure.",
+      "emoji": "🧭"
+    },
+    {
+      "title": "Leadership",
+      "desc": "As an Assistant Patrol Leader, I now help teach outdoor skills, navigation, and outdoor cooking to younger Scouts.",
+      "emoji": "📣"
+    },
+    {
+      "title": "Resilience",
+      "desc": "Getting damp in rainstorms or losing the path temporarily has taught me to laugh, keep going, and find positive solutions.",
+      "emoji": "⛈️"
+    },
+    {
+      "title": "Belonging",
+      "desc": "I've made lifelong friends from different backgrounds who support each other. It feels like a big, welcoming global family.",
+      "emoji": "🌍"
+    }
+  ],
+  "activities": [
+    {
+      "id": 1,
+      "title": "Jamboree Cake & Bake Sale",
+      "date": "June 2026",
+      "desc": "Baked over 120 cupcakes, brownies, and cookies for the local village fair. A huge hit in the local community!",
+      "raised": 280,
+      "status": "completed",
+      "actionText": "Completed!",
+      "image": "/images/activity_bake_sale.png"
+    },
+    {
+      "id": 2,
+      "title": "Sponsored 15-Mile Trail Hike",
+      "date": "August 2026",
+      "desc": "Hiking the demanding Peak Ridge Path trail to raise sponsorships. Pledges are open on my SumUp or offline forms!",
+      "raised": 640,
+      "status": "in-progress",
+      "actionText": "Sponsor me",
+      "image": "/images/activity_sponsored_walk.png"
+    },
+    {
+      "id": 3,
+      "title": "Handmade Craft & Christmas Sale",
+      "date": "December 2026",
+      "desc": "Making and selling hand-carved wooden decorations and custom paracord survival bracelets in local craft markets.",
+      "raised": 0,
+      "status": "upcoming",
+      "actionText": "Pre-order crafts",
+      "image": "/images/activity_crafts.png"
+    },
+    {
+      "id": 4,
+      "title": "Scout Group Yard Clean-up",
+      "date": "March 2026",
+      "desc": "Offered gardening and yard clearing services in exchange for donations in our neighborhood. Hard work but very fun!",
+      "raised": 350,
+      "status": "completed",
+      "actionText": "Completed!",
+      "image": "/images/activity_cleanup.png"
+    }
+  ],
+  "updates": [
+    {
+      "id": 1,
+      "date": "July 12, 2026",
+      "title": "First UK Contingent Training Weekend!",
+      "desc": "Just returned from my first training weekend with our regional unit (Unit 42)! We practiced team building, pitched the large patrol tents, and started planning our unit identity. It was amazing to meet the other 35 Scouts who I'll be travelling with.",
+      "image": "/images/update_training.png"
+    },
+    {
+      "id": 2,
+      "date": "June 15, 2026",
+      "title": "Launch of my Fundraising Website",
+      "desc": "My dad and I built this website to share my journey! I am super excited to keep you all updated on my progress. The SumUp link is live and secure, and thank you for visiting!",
+      "image": "/images/update_launch.png"
+    }
+  ],
+  "safeguarding": {
+    "contactEmail": "parent.mia.jamboree@example.com",
+    "parentName": "John P.",
+    "notice": "For Mia's safety, this website is managed and monitored by her parents. No personal contact details, precise timetables, or real-time location tracking are published here. All messages sent through the contact form are routed directly to her parents."
+  }
+}
