@@ -102,7 +102,7 @@ function getDirectImageUrl(url: string): string {
   if (!url) return '';
   const driveMatch = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || url.match(/id=([a-zA-Z0-9_-]+)/);
   if (driveMatch && driveMatch[1]) {
-    return `https://docs.google.com/uc?export=view&id=${driveMatch[1]}`;
+    return `https://lh3.googleusercontent.com/d/${driveMatch[1]}`;
   }
   return url;
 }
