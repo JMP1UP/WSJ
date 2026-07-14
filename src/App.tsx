@@ -55,6 +55,7 @@ interface ContentData {
     status: string;
     actionText: string;
     image: string;
+    link?: string;
   }[];
   updates: {
     id: number;
@@ -62,6 +63,8 @@ interface ContentData {
     title: string;
     desc: string;
     image: string;
+    link?: string;
+    linkText?: string;
   }[];
   safeguarding: {
     contactEmail: string;
@@ -167,7 +170,7 @@ export default function App() {
           }
         });
 
-        // Activities parsing (columns: Title, Date, Description, Raised, Status, ActionText, Image)
+        // Activities parsing (columns: Title, Date, Description, Raised, Status, ActionText, Image, Link)
         const parsedActivities = activitiesRows.slice(1).map((row, idx) => ({
           id: idx + 1,
           title: row[0] || 'Activity',
@@ -176,16 +179,19 @@ export default function App() {
           raised: parseFloat((row[3] || '').replace(/[^0-9.]/g, '')) || 0,
           status: (row[4] || 'upcoming').toLowerCase().trim(),
           actionText: row[5] || 'Sponsor me',
-          image: row[6] || 'images/story_hiking.png'
+          image: row[6] || 'images/story_hiking.png',
+          link: row[7] || ''
         }));
 
-        // Updates parsing (columns: Date, Title, Description, Image)
+        // Updates parsing (columns: Date, Title, Description, Image, Link, LinkText)
         const parsedUpdates = updatesRows.slice(1).map((row, idx) => ({
           id: idx + 1,
           date: row[0] || '',
           title: row[1] || 'Update',
           desc: row[2] || '',
-          image: row[3] || 'images/update_launch.png'
+          image: row[3] || 'images/update_launch.png',
+          link: row[4] || '',
+          linkText: row[5] || ''
         }));
 
         setSheetData({
@@ -570,7 +576,7 @@ export default function App() {
                         
                         {act.status !== 'completed' ? (
                           <a 
-                            href={data.donationUrl} 
+                            href={act.link || data.donationUrl} 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             className="activity-btn sponsor"
@@ -600,6 +606,27 @@ export default function App() {
                     <span className="update-date">{upd.date}</span>
                     <h3>{upd.title}</h3>
                     <p>{upd.desc}</p>
+                    {upd.link && (
+                      <a 
+                        href={upd.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="update-action-btn"
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          marginTop: '12px',
+                          fontSize: '0.85rem',
+                          fontWeight: 700,
+                          color: 'var(--primary)',
+                          textDecoration: 'none',
+                          gap: '6px',
+                          transition: 'color 0.2s'
+                        }}
+                      >
+                        {upd.linkText || 'Read details'} <ArrowUpRight size={14} />
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}
