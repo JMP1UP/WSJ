@@ -363,6 +363,23 @@ export default function App() {
               <img src="images/hero_scout_outdoors.png" alt={`${data.firstName} in Scout Uniform outdoors`} />
             </div>
             <div className="hero-badge">Poland 2027 🇵🇱</div>
+            <div className="wsj-floating-badge" style={{
+              position: 'absolute',
+              bottom: '-25px',
+              left: '-25px',
+              width: '90px',
+              height: '90px',
+              borderRadius: '50%',
+              backgroundColor: '#fff',
+              boxShadow: '0 4px 15px rgba(0, 0, 0, 0.15)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: '3px solid var(--primary)',
+              zIndex: 10
+            }}>
+              <img src="images/wsj_badge.png" alt="WSJ 2027 Badge" style={{ width: '90%', height: '90%', objectFit: 'contain' }} />
+            </div>
           </div>
         </div>
       </section>
@@ -421,7 +438,7 @@ export default function App() {
                 <img src="images/story_hiking.png" alt="Hiking in the hills" />
               </div>
               <div className="story-photo-wrapper">
-                <img src="images/story_campfire.png" alt="Campfire in the woods" />
+                <img src="images/story_group.png" alt="Isobel and her fellow scouts at their fundraising table" />
               </div>
             </div>
           </div>
