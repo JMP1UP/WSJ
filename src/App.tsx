@@ -17,11 +17,13 @@ import {
   X,
   ArrowUpRight
 } from 'lucide-react';
+import { useForm } from '@formspree/react';
 import contentData from './data/content.json';
 
 interface ContentData {
   firstName: string;
   spreadsheetId?: string;
+  formspreeId?: string;
   tagline: string;
   heroDescription: string;
   donationUrl: string;
@@ -240,18 +242,37 @@ export default function App() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  // Formspree Hook Integration
+  const [formspreeState, handleSubmit] = useForm(data.formspreeId || 'xwvgoegn');
+
+  // Trigger success banner and clear inputs when Formspree succeeds
+  useEffect(() => {
+    if (formspreeState.succeeded) {
+      setFormSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
+      const timer = setTimeout(() => setFormSubmitted(false), 8000);
+      return () => clearTimeout(timer);
+    }
+  }, [formspreeState.succeeded]);
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
     
     setIsSubmitting(true);
-    // Simulate API request
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    if (data.formspreeId && data.formspreeId !== 'YOUR_FORMSPREE_ID') {
+      // Live submit to Formspree
+      await handleSubmit(e);
+    } else {
+      // Fallback local simulation for development/testing
+      await new Promise(resolve => setTimeout(resolve, 1000));
       setFormSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setFormSubmitted(false), 8000); // clear banner after 8s
-    }, 1200);
+      setTimeout(() => setFormSubmitted(false), 8000);
+    }
+
+    setIsSubmitting(false);
   };
 
   // Mobile Menu State
