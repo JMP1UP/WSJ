@@ -282,7 +282,7 @@ export default function App() {
   const [showStickyDonate, setShowStickyDonate] = useState(true);
 
   // Dynamic QR Code generation using public free API
-  const [currentUrl, setCurrentUrl] = useState('https://isobel-jamboree-2027.example.com');
+  const [currentUrl, setCurrentUrl] = useState('https://jmp1up.github.io/WSJ/');
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setCurrentUrl(window.location.href);
