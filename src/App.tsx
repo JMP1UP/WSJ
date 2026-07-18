@@ -365,20 +365,14 @@ export default function App() {
             <div className="hero-badge">Poland 2027 🇵🇱</div>
             <div className="wsj-floating-badge" style={{
               position: 'absolute',
-              bottom: '-25px',
-              left: '-25px',
+              bottom: '-20px',
+              left: '-20px',
               width: '90px',
               height: '90px',
-              borderRadius: '50%',
-              backgroundColor: '#fff',
-              boxShadow: '0 4px 15px rgba(0, 0, 0, 0.15)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              border: '3px solid var(--primary)',
-              zIndex: 10
+              zIndex: 10,
+              filter: 'drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25))'
             }}>
-              <img src="images/wsj_badge.png" alt="WSJ 2027 Badge" style={{ width: '90%', height: '90%', objectFit: 'contain' }} />
+              <img src="images/wsj_badge.png" alt="Official WSJ 2027 Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
           </div>
         </div>
