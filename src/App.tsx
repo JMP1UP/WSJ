@@ -363,17 +363,6 @@ export default function App() {
               <img src="images/hero_scout_outdoors.png" alt={`${data.firstName} in Scout Uniform outdoors`} />
             </div>
             <div className="hero-badge">Poland 2027 🇵🇱</div>
-            <div className="wsj-floating-badge" style={{
-              position: 'absolute',
-              bottom: '-20px',
-              left: '-20px',
-              width: '90px',
-              height: '90px',
-              zIndex: 10,
-              filter: 'drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25))'
-            }}>
-              <img src="images/wsj_badge.png" alt="Official WSJ 2027 Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-            </div>
           </div>
         </div>
       </section>
