@@ -326,7 +326,12 @@ export default function App() {
       <header className="header">
         <div className="container nav-container">
           <a href="#" className="logo">
-            <Compass className="logo-icon" size={24} />
+            <div className="logo-icon" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '2px', width: '18px', height: '18px', flexShrink: 0, marginRight: '4px' }}>
+              <div style={{ width: '8px', height: '8px', borderRadius: '1.5px', backgroundColor: 'var(--primary, #1b4332)' }} />
+              <div style={{ width: '8px', height: '8px', borderRadius: '1.5px', backgroundColor: '#94a3b8', opacity: 0.3 }} />
+              <div style={{ width: '8px', height: '8px', borderRadius: '1.5px', backgroundColor: '#94a3b8', opacity: 0.3 }} />
+              <div style={{ width: '8px', height: '8px', borderRadius: '1.5px', backgroundColor: '#94a3b8', opacity: 0.3 }} />
+            </div>
             <span>{data.firstName}<span>Poland2027</span></span>
           </a>
 
